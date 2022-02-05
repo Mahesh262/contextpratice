@@ -1,0 +1,14 @@
+import React, { useContext } from 'react';
+import { store } from './App';
+
+const Acpnt = () => {
+    const [data, setData] = useContext(store)
+
+    return <>
+
+        cmponr {data.length}
+
+    </>;
+};
+
+export default Acpnt;
