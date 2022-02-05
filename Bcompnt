@@ -1,0 +1,11 @@
+import React, { useContext } from 'react';
+import { store } from './App';
+const Bcompnt = () => {
+    const [data, setData] = useContext(store)
+    return <>
+        helo
+        <br /> Bcpnt {data};
+    </>;
+};
+
+export default Bcompnt;
