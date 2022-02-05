@@ -1,0 +1,25 @@
+import React, { useContext, useState } from 'react';
+import { Card } from 'react-bootstrap';
+import { store } from './App';
+const Bcompnt = () => {
+    const [data, setData] = useContext(store)
+    const [name, setName] = useState('')
+    const SubmitHand = e => {
+        e.preventDefault();
+        setData([...data, { BrandedNAme: name }])
+
+    }
+    return <>
+        <Card variant="dark">
+            {data.map((item, index) => <h5 key={index}>{item.BrandedNAme}</h5>)}
+        </Card>
+        <form onSubmit={SubmitHand}>
+            <input
+                type="text"
+                onChange={(e) => setName(e.target.value)} />
+            <input type="submit" value="Add" />
+        </form>
+    </>;
+};
+
+export default Bcompnt;
